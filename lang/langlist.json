@@ -1,0 +1,17 @@
+{
+  "Encoding": "UTF-8",
+  "List": [
+    {
+      "code": "zh-cn",
+      "display": "中文（简体）"
+    },
+    {
+      "code": "zh-tw",
+      "display": "繁體中文（臺灣）"
+    },
+    {
+      "code": "en-us",
+      "display": "English(US)"
+    }
+  ]
+}

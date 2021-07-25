@@ -1,0 +1,88 @@
+{
+  "Encoding": "UTF-8",
+  "Info": {
+    "Loading": {
+      "CreateInitProcess": "正在创建初始化进程......",
+      "LoadingJsonAnalysisModule": "正在加载 json 解析模块......",
+      "LoadingExceptionAnalysisModule": "正在加载异常分析模块......",
+      "LoadingLangFile": "正在加载无障碍交互（多语言）文件......",
+      "LoadingGiveItems_accdb": "正在加载 Give Items.accdb ......"
+    },
+    "Information": {
+      "SuccessfullyChangedLanguage": "修改成功！您需要重启 %prog% 来更新您的设置。\r\n\r\n是否立刻重启 %prog% ？"
+    },
+    "Error": {
+      "Code": "代码",
+      "Description": "描述",
+      "Target": "目标",
+      "Analysis": "分析",
+      "DirectoryNotFoundException": "代码：System1000\r\n\r\n描述：找不到文件或目录的一部分时引发的异常。\r\n\r\n",
+      "DirectoryNotFound": {
+        "Description": null,
+        "Analysis": null
+      },
+      "FileNotFound": {
+        "Description": null,
+        "Analysis": null
+      },
+      "FileNotFoundException": "代码：System1001\r\n\r\n描述：\r\n尝试访问磁盘上不存在的文件失败时引发的异常。\r\n\r\n目标：{file}"
+    }
+  },
+  "MessageBox": {
+    "Button": {
+      "OK": "确定",
+      "Cancel": "取消",
+      "Help": "获取帮助"
+    },
+    "Title": {
+      "Information": "信息",
+      "Help": "帮助",
+      "Tip": "提示",
+      "Error": "错误"
+    }
+  },
+  "Form": {
+    "Loading": {
+      "Title": "加载中 - %prog% %ver%"
+    },
+    "Homepage": {
+      "Title": "%prog% %ver%",
+      "GUI": {
+        "GiveItems": "物品获取",
+        "StatusEffect": "状态效果",
+        "SpreadPlayers": "随机传送",
+        "History": "历史记录",
+        "Settings": "设置",
+        "General": "通用",
+        "About": "关于MCE"
+      }
+    },
+    "GiveItems": {
+      "Title": "物品获取 - %prog% %ver%",
+      "Category": {
+        "Indexes": "<选择要获取的物品类别>",
+        "BuildingBlocks": "建筑方块",
+        "DecorationBlocks": "装饰性方块",
+        "Redstone": "红石",
+        "Transportation": "交通运输",
+        "Foodstuffs": "食物",
+        "Tools": "工具",
+        "Combat": "战斗用品",
+        "Brewing": "酿造",
+        "Miscellaneous": "杂项",
+        "SpecialItems": "特殊物品"
+      }
+    },
+    "Settings": {
+      "Title": "设置 - %prog% %ver%",
+      "General": {
+        "Text": "通用",
+        "DisplayLang": "显示语言：",
+        "DisplayLang.Indexes": "<选择一种MCE的显示语言>"
+      },
+      "SupportLib": {
+        "Text": "支持库"
+      }
+    }
+  }
+}
