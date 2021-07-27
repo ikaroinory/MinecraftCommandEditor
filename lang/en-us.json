@@ -1,0 +1,152 @@
+{
+  "Encoding": "UTF-8",
+  "Info": {
+    "Loading": {
+      "CreateInitProcess": "Creating initialization process......",
+      "LoadingJsonAnalysisModule": "Loading json parsing module......",
+      "LoadingExceptionAnalysisModule": "Loading exception analysis module......",
+      "LoadingLangFile": "Loading multiple languages......",
+      "LoadingGiveItems_accdb": "Loading Give Items.accdb ......"
+    },
+    "Information": {
+      "SuccessfullyChangedLanguage": "修改成功！您需要重启 %prog% 来更新您的设置。\r\n\r\n是否立刻重启 %prog% ？"
+    },
+    "Error": {
+      "Code": "代码",
+      "Description": "描述",
+      "Target": "目标",
+      "Analysis": "分析",
+      "DirectoryNotFoundException": "代码：System1000\r\n\r\n描述：找不到文件或目录的一部分时引发的异常。\r\n\r\n",
+      "DirectoryNotFound": {
+        "Description": null,
+        "Analysis": null
+      },
+      "FileNotFound": {
+        "Description": null,
+        "Analysis": null
+      },
+      "FileNotFoundException": "代码：System1001\r\n\r\n描述：\r\n尝试访问磁盘上不存在的文件失败时引发的异常。\r\n\r\n目标：{file}"
+    }
+  },
+  "MessageBox": {
+    "Button": {
+      "OK": "确定",
+      "Cancel": "取消",
+      "Help": "获取帮助"
+    },
+    "Title": {
+      "Information": "信息",
+      "Help": "帮助",
+      "Tip": "提示",
+      "Error": "错误"
+    }
+  },
+  "Form": {
+    "Loading": {
+      "Title": "加载中 - {%prog} {%ver}"
+    },
+    "Homepage": {
+      "Title": "{%prog} {%ver}",
+      "GUI": {
+        "GiveItems": "GiveItems",
+        "StatusEffect": "状态效果",
+        "SpreadPlayers": "随机传送",
+        "History": "历史记录",
+        "Settings": "Settings",
+        "General": "通用",
+        "About": "关于MCE"
+      }
+    },
+    "GiveItems": {
+      "Title": "GiveItems - {%prog} {%ver}",
+      "Category": {
+        "Index": "<Select an Item Category>",
+        "BuildingBlocks": "Building Blocks",
+        "DecorationBlocks": "Decoration Blocks",
+        "Redstone": "Redstone",
+        "Transportation": "Transportation",
+        "Foodstuffs": "Foodstuffs",
+        "Tools": "Tools",
+        "Combat": "Combat",
+        "Brewing": "Brewing",
+        "Miscellaneous": "Miscellaneous",
+        "SpecialItems": "Specia lItems"
+      },
+      "Items": {
+        "Index": "<Select an Item>"
+      },
+      "Player": {
+        "Index": "<Select a Player Identifier>"
+      },
+      "DisplayName": {
+        "ColorAndFont.Index": "<Color & Font>"
+      },
+      "Lore": {
+        "ColorAndFont.Index": "<Color & Font>"
+      },
+      "HideFlags": {
+        "Index": "<Select a Hide Flags>",
+        "ShowAll": "Show All",
+        "Enchantments": "Hide Enchantments",
+        "Attributes": "Hide Attributes",
+        "EnchantmentsAndAttributes": "Hide Enchs & Attributes",
+        "Unbreakable": "Hide Unbreakable",
+        "Breakable": "Hide Breakable",
+        "Placed": "Hide Placed",
+        "HideMost": "Hide Most",
+        "HideAll": "Hide All"
+      }
+    },
+    "Settings": {
+      "Title": "Settings - {%prog} {%ver}",
+      "General": {
+        "Text": "General",
+        "DisplayLang": "Display Language：",
+        "DisplayLang.Indexes": "<Select a language for display>"
+      },
+      "SupportLib": {
+        "Text": "Support Lib"
+      }
+    }
+  },
+  "Minecraft": {
+    "Color": {
+      "Index": "-------Color-------",
+      "Black": "Black",
+      "DarkBlue": "Dark Blue",
+      "DarkGreen": "Dark Green",
+      "DarkAqua": "Dark Aqua",
+      "DarkRed": "Dark Red",
+      "DarkPurple": "Dark Purple",
+      "Gold": "Gold",
+      "Gray": "Gray",
+      "DarkGray": "Dark Gray",
+      "Blue": "Blue",
+      "Green": "Green",
+      "Aqua": "Aqua",
+      "Red": "Red",
+      "LightPurple": "Light Purple",
+      "Yellow": "Yellow",
+      "White": "White"
+    },
+    "Font": {
+      "Index": "-------Font-------",
+      "Obfuscated": "Obfuscated",
+      "Bold": "Bold",
+      "Strikethrough": "Strikethrough",
+      "Underline": "Underline",
+      "Italic": "Italic",
+      "Reset": "Reset"
+    },
+    "Part": {
+      "Index": "<Part>",
+      "mainHand": "Main Hand",
+      "offHand": "Off Hand",
+      "Head": "Head",
+      "Chest": "Body",
+      "Legs": "Legs",
+      "Feet": "Feet",
+      "All": "All"
+    }
+  }
+}

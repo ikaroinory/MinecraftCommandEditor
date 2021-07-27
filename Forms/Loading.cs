@@ -24,7 +24,7 @@ namespace Minecraft_Command_Editor
 
         private void LoadLang()
         {
-            this.Text= lang.GetValue("Form", "Loading", "Title").Value.ToString();
+            this.Text = StrManipulation.Replace(lang.GetValue("Form", "Loading", "Title").Value.ToString(), CollectionItems.DefaultEscapeList);
             label_LoadingInfo.Text = lang.GetValue("Info", "Loading", "CreateInitProcess").Value.ToString();
         }
 
@@ -35,24 +35,8 @@ namespace Minecraft_Command_Editor
             Process.ThreadDelay(512);
             this.label_LoadingInfo.Text = lang.GetValue("Info", "Loading", "LoadingGiveItems_accdb").Value.ToString();
             Process.ThreadDelay(512);
-            this.Close();
-            /*
-            if (File.Exists(FilePath.Config) == false)
-            {
-                string text
-                    = "Code：System1001\r\n\r\n"
-                    + "Description: \r\n"
-                    + "The exception that is thrown when an attempt to access a file that does not exist on disk fails.\r\n\r\n"
-                    + "Target: " + FilePath.Config;
-                string caption = "Error";
-                string[] btnT = { "OK" };
-                Json info = new Json();
-                info.InitializeFromText(Resource.zh_cn.ToString());
-                info.GetValue(new string[] { "Info", "Error", "FileNotFoundException" });
-
-
-                MsgBox.Show(text, caption, MessageBoxButtons.OK, btnT);
-                */
+            this.Hide();
+            new Homepage().Show();
         }
     }
 }

@@ -17,33 +17,36 @@ namespace Minecraft_Command_Editor
 {
     public partial class Settings : Form
     {
-        readonly Json lang = new JsonFile(FilePath.lang);
-
+        private readonly Json lang = new JsonFile(FilePath.lang);
 
         public Settings()
         {
             InitializeComponent();
 
+            LoadLang();
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             this.Icon = new Icon(FilePath.icoIcon1);
 
-            LoadLang();
-            /* comboBox_DisplayLang */
+            #region comboBox_DisplayLang
+            JsonIterator langlistJson = new JsonIterator(JsonFile.Parse(FilePath.langlist));
+            List<JsonValue> langlist = langlistJson.TraversalArray("display", "List");
+            ComboBox_DisplayLang.Items.Add(lang.GetValue("Form", "Settings", "General", "DisplayLang.Indexes").Value);
+            foreach (var p in langlist)
             {
-                JsonIterator langlistJson = new JsonIterator(JsonFile.Parse(FilePath.langlist));
-                List<JsonValue> langlist = langlistJson.TraversalArray("display", "List");
-                foreach (var p in langlist)
-                {
-                    ComboBox_DisplayLang.Items.Add(p.Value);
-                }
-
-                ComboBox_DisplayLang.SelectedIndex = langlistJson.QueryItemInArray(SettingItems.lang, "code", "List");
+                ComboBox_DisplayLang.Items.Add(p.Value);
             }
+            ComboBox_DisplayLang.SelectedIndex = langlistJson.QueryItemInArray(SettingItems.lang, "code", "List") + 1;
+            #endregion
         }
 
         private void LoadLang()
         {
-            this.Text = lang.GetValue("Form", "Settings", "Title").Value.ToString();
-
+            this.Text = StrManipulation.Replace(lang.GetValue("Form", "Settings", "Title").Value.ToString(), CollectionItems.DefaultEscapeList);
+            
             tabPage_General.Text = lang.GetValue("Form", "Settings", "General", "Text").Value.ToString();
             tabPage_SupportLib.Text = lang.GetValue("Form", "Settings", "SupportLib", "Text").Value.ToString();
             label_DisplayLang.Text = lang.GetValue("Form", "Settings", "General", "DisplayLang").Value.ToString();
@@ -57,9 +60,9 @@ namespace Minecraft_Command_Editor
         private void comboBox_DisplayLang_DropDownClosed(object sender, EventArgs e)
         {
             JsonIterator langlistJson = new JsonIterator(JsonFile.Parse(FilePath.langlist));
-            if (ComboBox_DisplayLang.SelectedIndex != langlistJson.QueryItemInArray(SettingItems.lang, "code", "List"))
+            if (ComboBox_DisplayLang.SelectedIndex != 0 && ComboBox_DisplayLang.SelectedIndex != langlistJson.QueryItemInArray(SettingItems.lang, "code", "List") + 1)
             {
-                string newLang = new Json(langlistJson).GetValue("List", ComboBox_DisplayLang.SelectedIndex, "code").Value.ToString();
+                string newLang = new Json(langlistJson).GetValue("List", ComboBox_DisplayLang.SelectedIndex - 1, "code").Value.ToString();
                 string[] btnT =
                 {
                     lang.GetValue("MessageBox", "Button", "OK").Value.ToString(),
@@ -70,8 +73,7 @@ namespace Minecraft_Command_Editor
                 JsonFile.Save(FilePath.config, tmp.GetJsonObject());
                 if (MsgBox.Show(lang.GetValue("Info", "Information", "SuccessfullyChangedLanguage").Value.ToString(), lang.GetValue("MessageBox", "Title", "Tip").Value.ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, btnT) == DialogResult.OK)
                 {
-                    Application.Exit();
-                    System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                    Application.Restart();
                 }
             }
         }

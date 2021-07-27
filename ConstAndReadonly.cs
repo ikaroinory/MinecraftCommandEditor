@@ -40,11 +40,10 @@ namespace Minecraft_Command_Editor
     {
         public static readonly SortedList DefaultEscapeList = new SortedList
         {
-            { "%%", "%" },
-            { "@@", "@" },
-            { "%prog%", "Minecraft Command Editor" },
-            { "%ver%", "3.0.0" },
-            { "%lang%", SettingItems.lang },
+            { "{%prog}", "Minecraft Command Editor" },
+            { "{%ver}", new Json(File.config).GetValue("Application", "Version").Value.ToString() },
+            { "{%lang}", SettingItems.lang },
+            { "%%" , "%" },
         };
 
         public static class MsgBoxButtonTitle

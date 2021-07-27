@@ -43,10 +43,10 @@
   },
   "Form": {
     "Loading": {
-      "Title": "加载中 - %prog% %ver%"
+      "Title": "加载中 - {%prog} {%ver}"
     },
     "Homepage": {
-      "Title": "%prog% %ver%",
+      "Title": "{%prog} {%ver}",
       "GUI": {
         "GiveItems": "物品获取",
         "StatusEffect": "状态效果",
@@ -58,9 +58,9 @@
       }
     },
     "GiveItems": {
-      "Title": "物品获取 - %prog% %ver%",
+      "Title": "物品获取 - {%prog} {%ver}",
       "Category": {
-        "Indexes": "<选择要获取的物品类别>",
+        "Index": "<选择要生成的物品类别>",
         "BuildingBlocks": "建筑方块",
         "DecorationBlocks": "装饰性方块",
         "Redstone": "红石",
@@ -71,10 +71,16 @@
         "Brewing": "酿造",
         "Miscellaneous": "杂项",
         "SpecialItems": "特殊物品"
+      },
+      "Items": {
+        "Index": "<选择要生成的物品>"
+      },
+      "Player": {
+        "Index": "<选择玩家标识符>"
       }
     },
     "Settings": {
-      "Title": "设置 - %prog% %ver%",
+      "Title": "设置 - {%prog} {%ver}",
       "General": {
         "Text": "通用",
         "DisplayLang": "显示语言：",

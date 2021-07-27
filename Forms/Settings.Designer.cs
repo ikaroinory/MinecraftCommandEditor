@@ -98,6 +98,7 @@ namespace Minecraft_Command_Editor
             this.ClientSize = new System.Drawing.Size(504, 348);
             this.Controls.Add(this.tabControl_Settings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings - Minecraft Command Editor";

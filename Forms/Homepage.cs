@@ -8,18 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Functions.System;
 using JsonParser;
 
 namespace Minecraft_Command_Editor
 {
     public partial class Homepage : Form
     {
-        readonly Json lang = new JsonFile(FilePath.lang);
-
+        private readonly Json lang = new JsonFile(FilePath.lang);
+        private bool isExitThread;
 
         public Homepage()
         {
             InitializeComponent();
+            isExitThread = true;
 
             this.Icon = new Icon(FilePath.icoIcon1);
 
@@ -35,26 +37,31 @@ namespace Minecraft_Command_Editor
              * 未处理异常
              * System.ArgumentNullException:“Value cannot be null. Arg_ParamName_Name”
              */
-            this.Text = lang.GetValue("Form", "Homepage", "Title").Value.ToString();
+            this.Text = StrManipulation.Replace(lang.GetValue("Form", "Homepage", "Title").Value.ToString(), CollectionItems.DefaultEscapeList);
             label_GiveItems.Text = lang.GetValue("Form", "Homepage", "GUI", "GiveItems").Value.ToString();
             label_Settings.Text = lang.GetValue("Form", "Homepage", "GUI", "Settings").Value.ToString();
         }
 
-        private void LoadSettings(object sender, EventArgs e)
+        private void Homepage_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new Settings().Show();
-            this.Hide();
+            if (isExitThread)
+            {
+                Application.Exit();
+            }
         }
 
         private void LoadGiveItems(object sender, EventArgs e)
         {
+            isExitThread = false;
             new GiveItems().Show();
             this.Hide();
         }
 
-        private void Homepage_FormClosed(object sender, FormClosedEventArgs e)
+        private void LoadSettings(object sender, EventArgs e)
         {
-            Application.Exit();
+            isExitThread = false;
+            new Settings().Show();
+            this.Close();
         }
     }
 }
